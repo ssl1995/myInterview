@@ -1,6 +1,4 @@
 package 反射.reflect;
-
-
 import org.junit.Test;
 import 反射.bean.User;
 
