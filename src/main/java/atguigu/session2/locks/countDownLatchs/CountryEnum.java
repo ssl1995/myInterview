@@ -1,4 +1,4 @@
-package atguigu.session2.countDownLatchs;
+package atguigu.session2.locks.countDownLatchs;
 
 public enum CountryEnum {
     ONE(1, "齐"), TWE(2, "燕"), THREE(3, "楚"), FOUR(4, "赵"), FIVE(5, "魏"), SIX(6, "韩");

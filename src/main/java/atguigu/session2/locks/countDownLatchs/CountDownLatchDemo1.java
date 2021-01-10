@@ -1,4 +1,4 @@
-package atguigu.session2.countDownLatchs;
+package atguigu.session2.locks.countDownLatchs;
 
 import java.util.concurrent.CountDownLatch;
 

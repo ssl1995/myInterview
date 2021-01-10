@@ -9,7 +9,6 @@ public class VolatileDemo {
 
         //2 第一个线程AAA
         new Thread(() -> {
-            // AAA come in
             System.out.println(Thread.currentThread().getName() + "\t come in");
             // 暂停3s
             try {
@@ -17,16 +16,17 @@ public class VolatileDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            // 调用资源类，num = 60
+            // 调用资源类，使得num = 60
             myData.addTo();
             System.out.println(Thread.currentThread().getName() + "\t updated number 成员变量和局部变量:" + myData.num);
-        }, "AAA").start();
+        }, "线程1").start();
 
-        //3 第二个线程就是=main，num没有使用volatile修饰的变量，此时这里一直循环，出不去
+        //3 线程2：main线程，num没有使用volatile修饰的变量，此时这里一直循环，出不去
         while (myData.num == 0) {
-
+            // 等待线程1暂停3s结束后，
+            System.out.println("-------");
         }
         //4 资源类中的num如果被volatile修饰，就会执行到这一句
-        System.out.println(Thread.currentThread().getName() + "\t 已使用volatile修饰，mission is over");
+        System.out.println(Thread.currentThread().getName() + "\t 已使用volatile修饰，模拟结束");
     }
 }

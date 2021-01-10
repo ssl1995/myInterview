@@ -1,10 +1,11 @@
-package 反射.reflect;
+package 基础面试.反射.reflect;
 import org.junit.Test;
-import 反射.bean.User;
+import 基础面试.反射.bean.User;
 
 import java.lang.reflect.Constructor;
 
 public class Demo1 {
+    private final String userPath = "基础面试.反射.bean.User";
 
     /**
      * 三种获取字节码的方法
@@ -14,7 +15,7 @@ public class Demo1 {
         // 类.class
         Class<String> stringClass = String.class;
         // Class。forName(className)
-        Class<?> userClazz = Class.forName("bean.User");
+        Class<?> userClazz = Class.forName(userPath);
         User user = new User();
         // 对象.getClass()
         Class<? extends User> userClazz1 = user.getClass();
@@ -25,7 +26,7 @@ public class Demo1 {
      */
     @Test
     public void test2() throws Exception {
-        Class<?> userClazz = Class.forName("bean.User");
+        Class<?> userClazz = Class.forName(userPath);
         Constructor<?> c1 = userClazz.getConstructor();
         Constructor<?> c2 = userClazz.getConstructor(int.class);
         Constructor<?> c3 = userClazz.getConstructor(int.class, String.class);
@@ -38,7 +39,7 @@ public class Demo1 {
      */
     @Test
     public void test3() throws Exception {
-        Class<?> userClazz = Class.forName("bean.User");
+        Class<?> userClazz = Class.forName(userPath);
         // 私有需要declared修饰
         Constructor<?> c = userClazz.getDeclaredConstructor(String.class);
         // setAccessible设置暴露破解
@@ -52,7 +53,7 @@ public class Demo1 {
      */
     @Test
     public void test4() throws Exception {
-        Class<?> userClazz = Class.forName("bean.User");
+        Class<?> userClazz = Class.forName(userPath);
         Constructor<?>[] constructors = userClazz.getDeclaredConstructors();
         for (Constructor c : constructors) {
             System.out.println(c);

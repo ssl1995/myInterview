@@ -1,5 +1,5 @@
 package atguigu.session2.locks;
-//SynchronizedDemo是典型的可重入锁
+// synchronized是可重入锁
 public class SynchronizedDemo {
     public static void main(String[] args) {
         Phone phone = new Phone();

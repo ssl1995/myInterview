@@ -1,12 +1,8 @@
-package atguigu.session2;
+package atguigu.session2.threadPool;
 
 import java.text.SimpleDateFormat;
 import java.util.Random;
 
-/**
- * @author ssl
- * @date 2020/3/14 21:33
- */
 public class ThreadLocalExample implements Runnable{
     // SimpleDateFormat 不是线程安全的，所以每个线程都要有⾃⼰独⽴的副本
     private static final

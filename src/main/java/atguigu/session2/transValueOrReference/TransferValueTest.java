@@ -1,4 +1,4 @@
-package atguigu.session2.TransValueOrReference;
+package atguigu.session2.transValueOrReference;
 
 public class TransferValueTest {
 

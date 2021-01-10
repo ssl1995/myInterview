@@ -1,32 +1,27 @@
 package atguigu.session2.casAndAba;
 
-import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
-public class ABADemo {
+import java.util.concurrent.atomic.AtomicInteger;
 
-    //普通原子引用
-    static AtomicReference<Integer> atomicReference = new AtomicReference<>(100);
+public class ABADemo {
+    // AtomicInteger底层使用CAS比较并交换，但是会出现ABA问题
+    static AtomicInteger atomicInteger = new AtomicInteger(1);
 
     public static void main(String[] args) {
-        HashMap<String, String> map = new HashMap<>();
-        //使用过AtomicReference演示ABA问题
-
         new Thread(() -> {
-            atomicReference.compareAndSet(100, 101);
-            atomicReference.compareAndSet(101, 100);
+            atomicInteger.compareAndSet(1, 2);
+            atomicInteger.compareAndSet(2, 1);
         }, "t1").start();
 
         new Thread(() -> {
             //休眠，是的t1线程先执行完成BA操作
             try {
-                TimeUnit.SECONDS.sleep(3);
+                TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            boolean result1 = atomicReference.compareAndSet(100, 101);
-            //结果虽然是101，但是中间的100被替换了2次，100到101再到100,这是不友好的
-            System.out.println(Thread.currentThread().getName() + "执行结果:" + result1 + "\t" + atomicReference.get());
+            boolean res = atomicInteger.compareAndSet(1, 3);
+            System.out.println(Thread.currentThread().getName() + "执行结果:" + res + "\t" + atomicInteger.get());
 
         }, "t2").start();
 

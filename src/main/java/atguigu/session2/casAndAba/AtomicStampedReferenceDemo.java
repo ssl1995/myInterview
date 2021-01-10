@@ -2,14 +2,13 @@ package atguigu.session2.casAndAba;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicStampedReference;
-//解决ABA问题2:
+//解决ABA问题2:AtomicStampedReference指定版本号
 public class AtomicStampedReferenceDemo {
     //使用原子时间戳引用包装对象,自定义版本号和引用对象
     static AtomicStampedReference<Integer> stampedReference = new AtomicStampedReference<>(100, 1);
 
     public static void main(String[] args) {
         new Thread(() -> {
-            // stamp = 1
             int stamp = stampedReference.getStamp();
             System.out.println(Thread.currentThread().getName() + " 版本号1:" + stamp);
             //暂停1s等t2线程
@@ -27,7 +26,7 @@ public class AtomicStampedReferenceDemo {
 
         new Thread(() -> {
             int exceptStamp = stampedReference.getStamp();
-            System.out.println(Thread.currentThread().getName() + " 版本号1:" + exceptStamp);
+            System.out.println(Thread.currentThread().getName() + " 期望版本号:" + exceptStamp);
             //暂停3s等t1线程
             try {
                 TimeUnit.SECONDS.sleep(3);
@@ -37,7 +36,7 @@ public class AtomicStampedReferenceDemo {
             // t1 线程执行完毕后，版本号 = 3 与 这里的 exceptStamp永不相同，所以执行会失败
             boolean result = stampedReference.compareAndSet(100, 200, exceptStamp, exceptStamp + 1);
             int nowStamp = stampedReference.getStamp();
-            System.out.println(Thread.currentThread().getName() + " 修改值:" + result + " 实际版本号：" + nowStamp + " 而不是:" + exceptStamp);
+            System.out.println(Thread.currentThread().getName() + " 修改值结果:" + result + " 当前版本号：" + nowStamp + " 期望版本号:" + exceptStamp);
             System.out.println(Thread.currentThread().getName() + " 当前实际值:" + stampedReference.getReference());
         }, "t2").start();
     }

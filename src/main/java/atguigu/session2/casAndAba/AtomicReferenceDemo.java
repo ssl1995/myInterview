@@ -1,6 +1,7 @@
 package atguigu.session2.casAndAba;
 
 import java.util.concurrent.atomic.AtomicReference;
+
 //解决ABA问题1：使用原子引用类包装对象
 public class AtomicReferenceDemo {
     public static void main(String[] args) {
@@ -13,12 +14,7 @@ public class AtomicReferenceDemo {
         //模仿CAS操作，看是否出现ABA问题
         boolean resultU1 = atomicReference.compareAndSet(u1, u2);
         boolean resultU2 = atomicReference.compareAndSet(u1, u2);
-        /*
-            true	User{userName='李四', age=28}
-            false	User{userName='李四', age=28}
-         */
-        System.out.println(resultU1 + "\t" + atomicReference.get().toString());
-        System.out.println(resultU2 + "\t" + atomicReference.get().toString());
-
+        System.out.println(resultU1 + "\t" + atomicReference.get().toString());// true
+        System.out.println(resultU2 + "\t" + atomicReference.get().toString());// false
     }
 }
