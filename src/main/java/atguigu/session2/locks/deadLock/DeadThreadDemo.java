@@ -1,4 +1,4 @@
-package atguigu.session2.deadLock;
+package atguigu.session2.locks.deadLock;
 
 import java.util.concurrent.TimeUnit;
 

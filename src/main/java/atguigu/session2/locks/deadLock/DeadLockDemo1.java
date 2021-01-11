@@ -1,4 +1,4 @@
-package atguigu.session2.deadLock;
+package atguigu.session2.locks.deadLock;
 
 public class DeadLockDemo1 {
     // 资源1，让线程1获得
