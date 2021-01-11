@@ -1,4 +1,4 @@
-package 基础面试.生产者消费者;
+package 面试常见算法.生产者消费者;
 
 public class Store {
     private int count;

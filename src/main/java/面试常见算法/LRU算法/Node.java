@@ -1,4 +1,4 @@
-package 基础面试.LRU算法;
+package 面试常见算法.LRU算法;
 
 public class Node {
     String key;
