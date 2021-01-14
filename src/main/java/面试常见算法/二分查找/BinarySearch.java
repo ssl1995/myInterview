@@ -29,7 +29,7 @@ public class BinarySearch {
         }
         return -1;
     }
-
+    
     /*                0 1 2 3 4
       二分搜索模版二:  [1 2 3 4 5]
                     left=0,right=5

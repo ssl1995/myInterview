@@ -1,4 +1,4 @@
-package atguigu.session2.locks;
+package 基础面试.JUC.locks;
 
 
 public class ReadWriteLockDemo {
