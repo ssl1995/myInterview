@@ -1,8 +1,5 @@
 package 面试常见算法.生产者消费者.lock版本;
 
-import atguigu.session1.SE.初始化过程.Father;
-
-
 class MyResources1 {
     private int num = 0;
 

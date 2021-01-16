@@ -2,7 +2,7 @@ package 面试常见算法.LRU算法;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-
+// 力扣146
 public class LRUCache {
     // 双端链表便于删除头部
     private LinkedList<Node> cache;
@@ -42,7 +42,7 @@ public class LRUCache {
             if (node.key.equals(key)) {
                 value = node.value;
                 // LRU：取出的元素放到尾部，让头部是最不常用的元素
-                // 把原来该位置的元素删除，并把新元素添加到链表尾部
+                // 把原来该位置的元素删 除，并把新元素添加到链表尾部
                 iterator.remove();
                 add(key, value);
                 break;
