@@ -1,4 +1,4 @@
-package 基础面试.动态代理;
+package ssl.动态代理;
 
 
 import org.springframework.cglib.proxy.Enhancer;

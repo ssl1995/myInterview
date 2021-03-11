@@ -1,4 +1,4 @@
-package 基础面试.JUC.locks;
+package ssl.JUC.locks;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

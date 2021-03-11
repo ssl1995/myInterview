@@ -1,4 +1,4 @@
-package 基础面试.JUC.locks.deadLock;
+package ssl.JUC.locks.deadLock;
 
 public class DeadLockDemo1 {
     // 资源1，让线程1获得

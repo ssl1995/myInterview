@@ -1,4 +1,4 @@
-package 基础面试.JUC.blockQueue;
+package ssl.JUC.blockQueue;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

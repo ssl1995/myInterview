@@ -1,4 +1,4 @@
-package 基础面试.JUC.threadPool;
+package ssl.JUC.threadPool;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;

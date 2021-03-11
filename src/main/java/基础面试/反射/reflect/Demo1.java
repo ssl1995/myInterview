@@ -1,6 +1,6 @@
-package 基础面试.反射.reflect;
+package ssl.反射.reflect;
 import org.junit.Test;
-import 基础面试.反射.bean.User;
+import ssl.反射.bean.User;
 
 import java.lang.reflect.Constructor;
 

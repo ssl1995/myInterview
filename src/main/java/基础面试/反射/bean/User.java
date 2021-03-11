@@ -1,4 +1,4 @@
-package 基础面试.反射.bean;
+package ssl.反射.bean;
 import java.util.Date;
 
 public class User {

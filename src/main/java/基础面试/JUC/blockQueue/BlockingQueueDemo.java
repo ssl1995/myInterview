@@ -1,7 +1,6 @@
-package 基础面试.JUC.blockQueue;
+package ssl.JUC.blockQueue;
 
 import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 public class BlockingQueueDemo {

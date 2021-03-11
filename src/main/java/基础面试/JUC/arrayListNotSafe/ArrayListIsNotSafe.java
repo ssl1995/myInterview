@@ -1,4 +1,4 @@
-package 基础面试.JUC.arrayListNotSafe;
+package ssl.JUC.arrayListNotSafe;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;

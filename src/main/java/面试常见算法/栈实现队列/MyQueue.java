@@ -7,12 +7,13 @@ public class MyQueue {
     private Stack<Integer> stackPop;
 
     public MyQueue() {
-        stackPush = new Stack<Integer>();
-        stackPop = new Stack<Integer>();
+        stackPush = new Stack<>();
+        stackPop = new Stack<>();
     }
 
-    // 栈实现队列方法1：摊还时间复杂度
+    // push栈向pop栈压入方法：摊还时间复杂度
     private void pushToPop() {
+        // 原则:pop栈为空，必须将push栈全部压入
         while (stackPop.isEmpty()) {
             while (!stackPush.isEmpty()) {
                 stackPop.push(stackPush.pop());
@@ -46,6 +47,7 @@ public class MyQueue {
 
 
     public boolean empty() {
+        // 两个栈都空才是队列空
         return stackPush.isEmpty() && stackPop.isEmpty();
     }
 }

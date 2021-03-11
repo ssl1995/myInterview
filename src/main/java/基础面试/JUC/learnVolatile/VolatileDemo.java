@@ -1,4 +1,4 @@
-package 基础面试.JUC.learnVolatile;
+package ssl.JUC.learnVolatile;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,7 +10,7 @@ public class VolatileDemo {
     // 不保证原子性：使用javap -c反编译查看原因
     private static void atomicByAtomicInteger() {
         // 1.资源类
-        MyResources myResources = new MyResources();
+        ssl.JUC.learnVolatile.MyResources myResources = new ssl.JUC.learnVolatile.MyResources();
         // 2.atomicInteger保证原子性
         for (int i = 0; i < 20; i++) {
             new Thread(() -> {
@@ -31,7 +31,7 @@ public class VolatileDemo {
     // 不保证原子性：使用javap -c反编译查看原因
     private static void NotAtomicByVolatile() {
         // 1.资源类
-        MyResources myResources = new MyResources();
+        ssl.JUC.learnVolatile.MyResources myResources = new ssl.JUC.learnVolatile.MyResources();
         // 2.模拟volatile不保证原子性
         for (int i = 0; i < 20; i++) {
             new Thread(() -> {
@@ -50,7 +50,7 @@ public class VolatileDemo {
 
     // 保证可见性Demo
     private static void seeOkByVolatile() {
-        MyResources myResources = new MyResources();
+        ssl.JUC.learnVolatile.MyResources myResources = new ssl.JUC.learnVolatile.MyResources();
 
         new Thread(() -> {
             System.out.println(Thread.currentThread().getName() + ",进入啦");

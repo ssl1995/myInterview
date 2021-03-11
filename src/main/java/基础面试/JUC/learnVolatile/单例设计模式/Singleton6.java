@@ -1,4 +1,4 @@
-package 基础面试.JUC.learnVolatile.单例设计模式;
+package ssl.JUC.learnVolatile.单例设计模式;
 
 public enum Singleton6 {
     INSTANCE;

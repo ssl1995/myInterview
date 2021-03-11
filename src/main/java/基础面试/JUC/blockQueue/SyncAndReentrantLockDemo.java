@@ -1,4 +1,4 @@
-package 基础面试.JUC.blockQueue;
+package ssl.JUC.blockQueue;
 
 /*
  sync和lock的区别题目：
@@ -7,7 +7,7 @@ package 基础面试.JUC.blockQueue;
  */
 public class SyncAndReentrantLockDemo {
     public static void main(String[] args) {
-        MyRenLockResources myResources = new MyRenLockResources();
+        ssl.JUC.blockQueue.MyRenLockResources myResources = new ssl.JUC.blockQueue.MyRenLockResources();
 
         new Thread(() -> {
             for (int i = 1; i <= 10; i++) {

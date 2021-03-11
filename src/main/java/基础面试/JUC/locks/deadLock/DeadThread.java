@@ -1,4 +1,4 @@
-package 基础面试.JUC.locks.deadLock;
+package ssl.JUC.locks.deadLock;
 
 import java.util.concurrent.TimeUnit;
 

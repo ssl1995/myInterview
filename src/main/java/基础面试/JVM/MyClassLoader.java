@@ -1,10 +1,7 @@
-package 基础面试.JVM;
+package ssl.JVM;
 
 import java.io.FileInputStream;
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class MyClassLoader {
     static class MyStaticCL extends ClassLoader {

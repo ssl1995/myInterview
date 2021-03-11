@@ -1,4 +1,4 @@
-package 基础面试.JUC.compareAndSet;
+package ssl.JUC.compareAndSet;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

@@ -1,4 +1,4 @@
-package 基础面试.JVM;
+package ssl.JVM;
 
 public class User {
     private String userName ;

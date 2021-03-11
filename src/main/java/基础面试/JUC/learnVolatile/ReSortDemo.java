@@ -1,4 +1,4 @@
-package 基础面试.JUC.learnVolatile;
+package ssl.JUC.learnVolatile;
 
 public class ReSortDemo {
     int a;
